@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form Data Pribadi</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+        background: #f5f5f5;
+      }
+      h2 {
+        text-align: center;
+        color: #333;
+      }
+      form {
+        background: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+        max-width: 400px;
+        margin: auto;
+      }
+      label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: bold;
+      }
+      input {
+        width: 100%;
+        padding: 8px;
+        margin-bottom: 15px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
+      button {
+        width: 100%;
+        padding: 10px;
+        background: #4caf50;
+        border: none;
+        border-radius: 5px;
+        color: white;
+        font-size: 16px;
+        cursor: pointer;
+      }
+      button:hover {
+        background: #45a049;
+      }
+      #gatau {
+        margin-top: 30px;
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        background: #fff;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+      }
+      th,
+      td {
+        border: 1px solid #ccc;
+        padding: 10px;
+        text-align: left;
+      }
+      th {
+        background: #4caf50;
+        color: white;
+        width: 30%;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Form Input Data</h2>
+    <!--Form input-->
+    <form id="FormSaya">
+      <label>Nama Kamu:</label>
+      <input type="text" id="saya" placeholder="sayalupa"equired />
+
+      <label>Tanggal lahir:</label>
+      <input type="date" id="meja"placeholder="tahun brp" required />
+
+      <label>Alamat :</label>
+      <input type="text" id="bangku" placeholder="rumahhlu" required />
+
+      <label>Umur:</label>
+      <input type="number" id="tua" placeholder="tahun" required />
+
+      <label>Email:</label>
+      <input type="text" id="akun" placeholder="ytaa"required />
+
+      <label>NIK:</label>
+      <input type="number" id="yaudah" placeholder="12334467" required />
+
+      <button type="submit">Kirim</button>
+    </form>
+
+    <!-- Hasil output -->
+    <div id="gatau" style="display: none"></div>
+
+    <script>
+      const form = document.getElementById("FormSaya");
+      const hasil = document.getElementById("gatau");
+
+      form.addEventListener("submit", function (event) {
+        event.preventDefault(); // cegah reload
+
+        const aku = document.getElementById("saya").value;
+        const lahir = document.getElementById("meja").value;
+        const rumah = document.getElementById("bangku").value;
+        const tua = document.getElementById("tua").value;
+        const privasi = document.getElementById("akun").value;
+        const angkam = document.getElementById("yaudah").value;
+
+        hasil.style.display = "block";
+        hasil.innerHTML = `
+        <h2>DATA PRIBADI</h2>
+        <table>
+          <tr><th>Nama Kamu</th><td>${aku}</td></tr>
+          <tr><th>Tanggal lahir</th><td>${lahir}</td></tr>
+          <tr><th>Alamat</th><td>${rumah}</td></tr>
+          <tr><th>Umur</th><td>${tua} tahun</td></tr>
+          <tr><th>Email</th><td>${privasi}</td></tr>
+          <tr><th>NIK</th><td>${angkam}</td></tr>
+        </table>
+      `;
+      });
+    </script>
+  </body>
+</html>
